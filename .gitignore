@@ -1,0 +1,3 @@
+# Ignore les fichiers et répertoires spécifiques
+
+node_modules/   
