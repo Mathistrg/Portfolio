@@ -1,9 +1,29 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/img/Poppins-Bold.ttf') format('ttf'),
+         url('/img/Poppins-BoldItalic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Utilisation de 'swap' pour afficher la police dès qu'elle est disponible */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+ 
 body {
     margin: 0;
     cursor: url('/img/Normal\ Select.ani'), auto; /* Curseur personnalisé pour toute la page */
+    /*scrollbar-width: none; /* Pour les navigateurs basés sur WebKit (Safari, Chrome) */
+    /*-ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+    font-family: 'Poppins', sans-serif;
 }
 
-/*souris*/
+/* Pour Firefox */
+/*body::-webkit-scrollbar {
+    display: none;
+}
+/*souris halo*/
 
 .cursor-halo {
     position: absolute;
@@ -30,36 +50,59 @@ body {
     90% { border-color: #12d2d2; } /* Azur */
 }
 
-
-
-/*fond d'écran */
-
-.background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden; /* Cache tout contenu débordant du conteneur */
-    background-image: url('/img/wall.png');
-    background-size: cover;
-    background-position: center top;
-    /* Autres styles que vous pouvez avoir */
-}
-
-.background::before {
-    content: "";
-    position: absolute;
+/* nav bar */
+.sticky-nav {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Couleur noire avec une opacité de 50% */
-    /* Réglez l'opacité (dernière valeur) selon vos préférences */
+    background-color: #0000002d;
+    z-index: 1000; /* Assure que la barre reste au-dessus du contenu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.364); /* Ombre sous la barre de navigation */
 }
 
+ul {
+    list-style-type: none; /* Supprime les puces de la liste */
+    margin: 0;
+    padding: 8px;
+    overflow: hidden;
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center;
+}
+
+li {
+    margin-left: 20px; /* Espacement entre les éléments */
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+}
+
+li:first-child {
+    margin-left: 0; /* Supprime l'espacement du premier élément */
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+li a:hover {
+    background: linear-gradient(90deg, rgba(0,57,255,1) 0%, rgba(0,34,124,1) 100%);
+    border-radius: 50px;
+}
+
+.content {
+    height: 1500px; /* Exemple de contenu pour simuler le défilement */
+}
 
 
 
 /* Scroll bar 
+
 /* Largeur de la scrollbar */
 ::-webkit-scrollbar {
     width: 12px; /* Largeur de la scrollbar */
@@ -75,4 +118,151 @@ body {
 /* Couleur de fond de la scrollbar */
 ::-webkit-scrollbar-track {
     background-color: #00060c; /* Couleur transparente de fond de la scrollbar */
+}
+
+.background {
+    position: relative;
+
+}
+.superposed-image{
+    position: absolute;
+    top: 0;
+    right: 0; /* Positionne l'image sur la droite */
+    padding: 65px;
+    /* Ajuste la taille, l'opacité, etc. */
+    width: 10%; /* Exemple d'ajustement de la largeur */
+}
+
+
+.animate-fade-in {
+    opacity: 0; /* Masque initialement l'élément */
+    animation: fadeInAnimation 2s ease-in-out forwards; /* Animation de fade-in */
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0; /* Début de l'animation avec opacité à 0 */
+    }
+    to {
+        opacity: 1; /* Fin de l'animation avec opacité à 1 */
+    }
+}
+
+
+
+/*fond d'écran */
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Cache tout contenu débordant du conteneur */
+    background-image: url('/img/wallpaper.jpg');
+    background-size: cover;
+    background-position: center top;
+    /* Autres styles que vous pouvez avoir */
+    user-select: none;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Couleur noire avec une opacité de 50% */
+    /* Réglez l'opacité (dernière valeur) selon vos préférences */
+}
+
+
+
+.name {
+    color: white;
+    mix-blend-mode: lighten;
+    margin-left: 150px;
+    margin-top: 290px;
+}
+.name p {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+.name h1 {
+    margin-top: 0px;
+    font-size: 100px;
+}
+
+#scroll-up-animation {
+    opacity: 0; /* Cache le contenu avant l'animation */
+    animation: scrollUp 1.5s ease-out forwards; /* Nom de l'animation, durée et mode de transition */
+}
+
+@keyframes scrollUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Décalage initial vers le bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Aucun décalage, position finale */
+    }
+}
+
+.webdev {
+    color: white;
+    mix-blend-mode: lighten;
+    margin-left: 150px;
+    margin-top: 400px;
+    position: relative;
+    display: flex;
+    user-select: none;
+}
+
+.webdev h1 {
+    position: absolute;
+    right: 100px;
+    bottom: 5px;
+    font-size: 80px;
+    background: linear-gradient(90deg, rgba(0,237,255,1) 0%, rgba(52,66,171,1) 35%, rgba(96,23,221,1) 65%, rgba(192,0,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; /* Rend le texte transparent */
+    animation: waveAnimation 5s infinite; /* Animation de vague */
+    background-size: 200% auto;
+}
+
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% center; /* Position initiale */
+    }
+    100% {
+        background-position: 200% center; /* Position finale */
+    }
+}
+
+
+
+
+
+.description {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Cache tout contenu débordant du conteneur */
+    background-color: wheat;
+    background-size: cover;
+    background-position: center top;
+    /* Autres styles que vous pouvez avoir */
+}
+
+.description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Couleur noire avec une opacité de 50% */
+    /* Réglez l'opacité (dernière valeur) selon vos préférences */
 }
