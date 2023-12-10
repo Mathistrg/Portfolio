@@ -19,6 +19,33 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/*loading page*/
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Au-dessus de tout le reste */
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.6s linear infinite; /* Animation de rotation */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 /* Pour Firefox */
 /*body::-webkit-scrollbar {
     display: none;
@@ -56,7 +83,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #0000002d;
+    background-color: #0000006d;
     z-index: 1000; /* Assure que la barre reste au-dessus du contenu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.364); /* Ombre sous la barre de navigation */
 }
@@ -87,11 +114,10 @@ li a {
     padding: 14px 50px;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    user-select: none;
 }
 
 li a:hover {
-    background: linear-gradient(90deg, rgba(0,57,255,1) 0%, rgba(0,34,124,1) 100%);
+    background: linear-gradient(90deg, rgba(0,57,255,0.8) 0%, rgba(0,34,124,0.8) 100%);
     border-radius: 50px;
 }
 
@@ -148,6 +174,31 @@ li a:hover {
     }
 }
 
+.video-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+#myVideo {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 
 
 /*fond d'écran */
@@ -157,7 +208,7 @@ li a:hover {
     width: 100%;
     height: 100vh;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
-    background-image: url('/img/wallpaper.jpg');
+    background-color: #000000;
     background-size: cover;
     background-position: center top;
     /* Autres styles que vous pouvez avoir */
@@ -194,13 +245,13 @@ li a:hover {
 
 #scroll-up-animation {
     opacity: 0; /* Cache le contenu avant l'animation */
-    animation: scrollUp 1.5s ease-out forwards; /* Nom de l'animation, durée et mode de transition */
+    animation: scrollUp 2s ease-out forwards; /* Nom de l'animation, durée et mode de transition */
 }
 
 @keyframes scrollUp {
     from {
         opacity: 0;
-        transform: translateY(50px); /* Décalage initial vers le bas */
+        transform: translateY(100px); /* Décalage initial vers le bas */
     }
     to {
         opacity: 1;
@@ -248,21 +299,63 @@ li a:hover {
 .description {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 200vh;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
-    background-color: wheat;
+    background-color: rgba(0, 0, 0, 0.852); /* Couleur noire avec une opacité de 50% */
     background-size: cover;
     background-position: center top;
     /* Autres styles que vous pouvez avoir */
 }
 
-.description::before {
-    content: "";
+.description img {
+    position: relative;
+    max-width: 100%; /* Image s'adaptant à la taille de son conteneur */
+    height: auto; /* Conserve le ratio hauteur/largeur */
+    display: block; /* Empêche les marges supplémentaires liées aux éléments inline */
+    margin: 0 auto; /* Centre l'image horizontalement */
+    float: right; /* Image flottante à gauche */
+    margin-top: 10px;
+    width: 150px;
+    margin-right: 150px;
+    user-select: none;
+}
+
+
+#moving-text {
+    top: 10px;
     position: absolute;
-    top: 0;
-    left: 0;
+    transition: left 0.5s ease; /* Transition du mouvement du texte (plus lente) */
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    font-size: 50px;
+    user-select: none;
+  }
+
+hr {
+    height: 2px; /* Hauteur de la ligne */
+    width: calc(100% - 40px); /* Largeur initiale réduite */
+    border: none; /* Retire la bordure */
+    background-color: rgb(255, 255, 255); /* Couleur de la ligne */
+    transition-duration: 0.5s; /* Durée de la transition de la ligne (plus courte = plus rapide) */
+    user-select: none;
+}
+
+.moi h1 {
+    justify-content: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    margin: 200px;
+    transform: translateX(0);
+
+}
+
+.moi {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Couleur noire avec une opacité de 50% */
-    /* Réglez l'opacité (dernière valeur) selon vos préférences */
+}
+.moi h1:first-child {
+    margin-top: 100px;
 }

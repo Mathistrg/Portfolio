@@ -19,7 +19,20 @@
     </ul>
 </nav>
     </header>
+    <div class="overlay" id="overlay">
+        <div class="loader"></div>
+    </div>
     <div class="background" id="parallax">
+        <div class="video-container">
+            <video autoplay muted loop id="myVideo">
+                <source src="/img/ink_-_67354 (Original).mp4" type="video/mp4">
+                <!-- Ajoute d'autres sources pour la compatibilité avec différents navigateurs -->
+                <!-- <source src="chemin/vers/ta/video.webm" type="video/webm"> -->
+                <!-- <source src="chemin/vers/ta/video.ogv" type="video/ogv"> -->
+                <!-- Fallback pour les navigateurs qui ne supportent pas la balise video -->
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </div>
         <img src="/img/WebTech_Institute-logotype-2019.webp" alt="" class="superposed-image" id="fade-in">
         <div class="name" id="scroll-up-animation">
             <p>Bonjour je m'appelle</p>
@@ -32,7 +45,19 @@
     </div>
 
     <div class="description">
-
+        <div id="moving-text">
+            <p>Qui suis-je ?<hr></p>
+        </div>
+        <img src="/img/Onepiece.gif" alt="" srcset="">
+        <div class="moi">
+            <h1 id="yearText">Etudiant en <span id="yearNumber"></span> année chez Webtech Institute</h1>
+            <h1>
+                <div id="age"></div>
+                <div id="countdown"></div>
+            </h1>
+            <h1>Je suis en web dev</h1>
+            <h1>J'ai mon baccalauréat S</h1>
+        </div>    
     </div>
 
 
