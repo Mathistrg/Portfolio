@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    cursor: url('/img/Normal\ Select.ani'), auto; /* Curseur personnalisé pour toute la page */
+}
+
+/*souris*/
+
+.cursor-halo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: rainbow-border 5s infinite; /* Animation rainbow pour la bordure */
+    border: 2px solid transparent; /* Bordure transparente pour commencer */
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rainbow-border {
+    0%, 100% { border-color: #6565e2; } /* Bleu */
+    10% { border-color: #456ce1; } /* Bleu royal */
+    20% { border-color: #1656cd; } /* Bleu cornflower */
+    30% { border-color: #04b8ff; } /* Bleu clair */
+    40% { border-color: #09b3eb; } /* Bleu poudre */
+    50% { border-color: #0ed0ea; } /* Bleu poudre clair */
+    60% { border-color: #0de0e0; } /* Bleu pâle */
+    70% { border-color: #11dfdf; } /* Bleu alice */
+    80% { border-color: #60a1da; } /* Bleu alice clair */
+    90% { border-color: #12d2d2; } /* Azur */
+}
+
+
+
+/*fond d'écran */
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Cache tout contenu débordant du conteneur */
+    background-image: url('/img/wall.png');
+    background-size: cover;
+    background-position: center top;
+    /* Autres styles que vous pouvez avoir */
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Couleur noire avec une opacité de 50% */
+    /* Réglez l'opacité (dernière valeur) selon vos préférences */
+}
+
+
+
+
+/* Scroll bar 
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la scrollbar */
+    background-color: transparent; /* Couleur transparente pour la scrollbar */
+}
+
+/* Couleur de la poignée */
+::-webkit-scrollbar-thumb {
+    background-color: #001b3bd6; /* Couleur de la poignée */
+    border-radius: 6px; /* Arrondi des coins de la poignée */
+}
+
+/* Couleur de fond de la scrollbar */
+::-webkit-scrollbar-track {
+    background-color: #00060c; /* Couleur transparente de fond de la scrollbar */
+}
