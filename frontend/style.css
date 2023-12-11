@@ -335,7 +335,7 @@ hr {
     height: 2px; /* Hauteur de la ligne */
     width: calc(100% - 40px); /* Largeur initiale réduite */
     border: none; /* Retire la bordure */
-    background-color: rgb(255, 255, 255); /* Couleur de la ligne */
+    background: linear-gradient(90deg, rgba(0,237,255,1) 0%, rgba(52,66,171,1) 35%, rgba(96,23,221,1) 65%, rgba(192,0,255,1) 100%);
     transition-duration: 0.5s; /* Durée de la transition de la ligne (plus courte = plus rapide) */
     user-select: none;
 }

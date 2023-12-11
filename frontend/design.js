@@ -110,12 +110,6 @@ const referenceMonth = 8; // (les mois commencent à partir de 0, donc septembre
 let birthday = new Date('2004-06-24'); // Modifiez cette date pour correspondre à votre date de naissance
 
 // Vérification pour déterminer si l'anniversaire est déjà passé cette année
-if (
-    (currentDate.getMonth() >= referenceMonth && currentDate.getDate() >= birthday.getDate()) ||
-    (currentDate.getMonth() > referenceMonth)
-) {
-    birthday.setFullYear(birthday.getFullYear() + 1); // Anniversaire pour l'année suivante
-}
 
 function determineYear() {
     // Vérifiez si nous sommes avant ou après le mois de référence (septembre)
@@ -131,21 +125,35 @@ function determineYear() {
 }
 
 function calculateAge(birth, current) {
-  const birthYear = birth.getFullYear();
-  const currentYear = current.getFullYear();
-
-  let age = currentYear - birthYear;
-
-  const birthMonth = birth.getMonth();
-  const currentMonth = current.getMonth();
-
-  // Vérification si l'anniversaire n'est pas encore passé cette année
-  if (currentMonth < birthMonth || (currentMonth === birthMonth && current.getDate() < birth.getDate())) {
+    const birthDate = new Date(birth);
+    const currentDate = new Date(current);
+  
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+  
+    const currentMonth = currentDate.getMonth();
+    const birthMonth = birthDate.getMonth();
+    if (
+        (currentDate.getMonth() >= referenceMonth && currentDate.getDate() >= birthday.getDate()) ||
+        (currentDate.getMonth() > referenceMonth)
+    ) {
+        birthday.setFullYear(birthday.getFullYear() + 1); // Anniversaire pour l'année suivante
+    }
+    // Si le mois actuel est inférieur au mois de naissance
+    // ou si les mois sont les mêmes mais le jour actuel est antérieur au jour de naissance
+    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDate.getDate() < birthDate.getDate())) {
       age--;
+    }
+  
+    // Vérification si l'âge est négatif ou égal à 0
+    if (age <= 0) {
+      age = 0;
+    }
+  
+    return age;
   }
-
-  return age;
-}
+    // Calculer l'âge et l'afficher
+    const age = calculateAge(birthday, currentDate);
+    document.getElementById('age').textContent = `J'ai ${age} ans`;
 
 function countdown() {
     const now = new Date().getTime();
@@ -167,9 +175,7 @@ function countdown() {
         // Réévaluer l'année scolaire après l'anniversaire
         determineYear();
     }
-       // Calculer l'âge et l'afficher
-       const age = calculateAge(birthday, currentDate);
-       document.getElementById('age').textContent = `Âge : ${age} ans`;
+
     
 }
 
@@ -177,7 +183,7 @@ function countdown() {
 determineYear();
 
 // Mettre à jour le compteur chaque seconde
-setInterval(countdown, 1000);
+setInterval(countdown, 10);
 
 // Appeler la fonction une fois pour éviter un délai initial
 countdown();
