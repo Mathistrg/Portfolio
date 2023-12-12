@@ -1,10 +1,10 @@
 //chargement vid
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('overlay').style.display = 'none';
-      //document.getElementById('content').style.display = 'block';
-    }, 600); // Affiche l'overlay pendant 2 secondes (2000 millisecondes)
-  });
+//  window.addEventListener('load', function() {
+//    setTimeout(function() {
+//      document.getElementById('overlay').style.display = 'none';
+//      //document.getElementById('content').style.display = 'block';
+//    }, 600); // Affiche l'overlay pendant 2 secondes (2000 millisecondes)
+//  });
 
 
 //Halo sur souris
