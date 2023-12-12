@@ -151,9 +151,9 @@ window.addEventListener('scroll', function() {
 });
 
 // Vérifie dès le chargement de la page
-window.addEventListener('load', function() {
-    afficherLogoMT();
-});
+//window.addEventListener('load', function() {
+//    afficherLogoMT();
+//});
 
 
 
