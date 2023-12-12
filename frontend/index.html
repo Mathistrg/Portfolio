@@ -10,19 +10,20 @@
 <body>
     <div class="cursor-halo"></div>
     <header>
-        <nav class="sticky-nav">
-    <ul>
-        <li><a href="#">Qui suis-je</a></li>
-        <li><a href="#">Compétences</a></li>
-        <li><a href="#">Projets</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
+    <nav class="sticky-nav">
+        <ul>
+            <li id="menu"><a href="#section1" id="logoMT">MT</a></li>
+            <li id="menu"><a href="#section2">Qui suis-je</a></li>
+            <li id="menu"><a href="#">Compétences</a></li>
+            <li id="menu"><a href="#">Projets</a></li>
+            <li id="menu"><a href="#">Contact</a></li>
+        </ul>
+    </nav>
     </header>
     <div class="overlay" id="overlay">
         <div class="loader"></div>
     </div>
-    <div class="background" id="parallax">
+    <div class="background" id="section1" id="parallax">
         <div class="video-container">
             <video autoplay muted loop id="myVideo">
                 <source src="/img/ink_-_67354 (Original).mp4" type="video/mp4">
@@ -33,10 +34,10 @@
                 Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
         </div>
-        <img src="/img/WebTech_Institute-logotype-2019.webp" alt="" class="superposed-image" id="fade-in">
+        <a href="https://webtech.institute/" target="_blank"><img src="/img/WebTech_Institute-logotype-2019.webp" alt="" class="superposed-image" id="fade-in"></a>
         <div class="name" id="scroll-up-animation">
             <p>Bonjour je m'appelle</p>
-            <h1>Mathis Truong</h1>
+            <h1 id="monTitre">Mathis Truong</h1>
         </div>
 
         <div class="webdev" id="scroll-up-animation">
@@ -44,20 +45,27 @@
         </div>
     </div>
 
-    <div class="description">
+    <div class="description" id="section2">
         <div id="moving-text">
             <p>Qui suis-je ?<hr></p>
         </div>
+
         <img src="/img/Onepiece.gif" alt="" srcset="">
+        
         <div class="moi">
-            <h1 id="yearText">Etudiant en <span id="yearNumber"></span> année à Webtech Institute</h1>
-            <h1>
-                <div id="age"></div>
-                <div id="countdown"></div>
+            <h1 class="scroll-fade slide-right"><hr style="height: 10px; width: 150px;">Etudiant en <span id="yearNumber"></span> année à Webtech Institute <hr style="height: 10px; width: 150px;"></h1>
+            <h1 class="scroll-fade slide-left">
+                <hr style="height: 10px; width: 150px;"><div id="age"></div>
+                <div id="countdown"></div><hr style="height: 10px; width: 150px;">
             </h1>
-            <h1>Je suis en Web Dev</h1>
-            <h1>J'ai eu mon Baccalauréat S</h1>
-        </div>    
+            <h1 class="scroll-fade slide-right"><hr style="height: 10px; width: 150px;">Je suis en Web Dev <hr style="height: 10px; width: 150px;"></h1>
+            <h1 class="scroll-fade slide-left"><hr style="height: 10px; width: 150px;">J'ai eu mon Baccalauréat S <hr style="height: 10px; width: 150px;"></h1>
+        </div>
+    </div>
+
+
+    <div class="competences">
+        
     </div>
 
 

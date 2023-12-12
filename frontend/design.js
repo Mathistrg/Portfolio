@@ -1,3 +1,12 @@
+//chargement vid
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('overlay').style.display = 'none';
+      //document.getElementById('content').style.display = 'block';
+    }, 600); // Affiche l'overlay pendant 2 secondes (2000 millisecondes)
+  });
+
+
 //Halo sur souris
 
 const cursorHalo = document.querySelector('.cursor-halo');
@@ -34,15 +43,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// image qui descend en meme temps que le scroll
-const parallax = document.getElementById('#parallax');
+// Récupérer l'élément #monTitre
+var monTitre = document.getElementById('monTitre');
+
+// Écouter l'événement scroll de la fenêtre
+window.addEventListener('scroll', function() {
+    // Calculer la nouvelle taille de police en fonction du défilement
+    var scrolled = window.scrollY;
+    var newX = 0 - scrolled / 40;
+    var newSize = 100 - scrolled / 10; // Vous pouvez ajuster le facteur de déplacement ici
+
+    // Limiter la taille minimale du texte pour éviter qu'il ne devienne trop petit
+    newSize = Math.max(newSize, 20); // Taille minimale de 20px (ajustez selon vos besoins)
+
+    // Appliquer la nouvelle taille de police au titre
+    monTitre.style.left = newX + 'vw'; // Déplacement horizontal en pourcentage de la largeur de la vue
+    monTitre.style.fontSize = newSize + 'px';
+});
 
 // Événement de défilement de la fenêtre
-window.addEventListener('scroll', function() {
-    // Déplace l'image d'arrière-plan en fonction du défilement
-    let offset = window.pageYOffset;
-    parallax.style.backgroundPositionY = offset * 0.7 + 'px'; // Ajustez le coefficient pour la vitesse du défilement
-});
+// Déplace l'image d'arrière-plan en fonction du défilement
+//window.addEventListener('scroll', function() {
+//    let offset = window.pageYOffset;
+//    parallax.style.backgroundPositionY = offset * 0.7 + 'px'; // Ajustez le coefficient pour la vitesse du défilement
+//});
 
 //text anim vers le haut 
 
@@ -61,44 +85,99 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//chargement vid
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('overlay').style.display = 'none';
-      //document.getElementById('content').style.display = 'block';
-    }, 600); // Affiche l'overlay pendant 2 secondes (2000 millisecondes)
-  });
-
-
 // element qui bouge 1
+let initialLeft = 0; // Position de départ du texte
+let lastScrollTop = 0; // Dernière position de défilement
 
-const element = document.querySelector('#moving-text');
-let initialLeft = 50; // Position horizontale initiale
-let movementSpeedText = 6; // Vitesse de déplacement du texte
-let movementSpeedLine = 3; // Vitesse de déplacement de la ligne
-let lastScrollTop = 0; // Variable pour stocker la dernière position de défilement
+const maxRightLimit = 250; // Limite droite maximale pour le déplacement du texte
 
 window.addEventListener('scroll', function() {
   let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-  // Changer les valeurs ici pour ajuster l'ampleur du déplacement
-  let scrollFactor = 0.3; // Facteur de déplacement, plus la valeur est élevée, plus le déplacement est important
+  let element = document.getElementById('moving-text');
+
+  // Facteur de déplacement basé sur la quantité de défilement
+  let scrollFactor = 0.20 + (currentScroll * 0.0005);
+
+  // Nouvelle position horizontale progressive
   let newPosition = initialLeft + (currentScroll * scrollFactor);
 
-  element.style.left = newPosition + 'px'; // Applique la nouvelle position horizontale
+  // Vérifie si la nouvelle position dépasse la limite droite
+  if (newPosition <= maxRightLimit) {
+    element.style.left = newPosition + 'px';
+  } else {
+    element.style.left = maxRightLimit + 'px'; // Fixe la position maximale
+  }
+
   let hr = document.querySelector('hr');
-  hr.style.width = `${120 + currentScroll}px`; // Largeur de la ligne + distance du scroll
+  hr.style.width = `${120 + currentScroll}px`;
 
-  // Mouvement du texte en fonction de la différence de défilement
-  let scrollDifference = currentScroll - lastScrollTop;
-  let newLeft = initialLeft + scrollDifference * movementSpeed;
-  element.style.left = newLeft + 'px';
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Mise à jour de la valeur de défilement
+// Fonction pour vérifier si l'élément est visible à l'écran
+function elementVisible(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Fonction pour afficher le logo MT avec une transition
+function afficherLogoMT() {
+    var titre = document.getElementById('monTitre');
+    var logoMT = document.getElementById('logoMT');
+  
+    // Vérifie si le titre n'est pas visible
+    if (!elementVisible(titre)) {
+      // Affiche le logo MT avec une transition
+      logoMT.style.opacity = '1';
+      logoMT.style.height = 'auto';
+      logoMT.style.pointerEvents = 'auto'; // Active les événements souris lorsque l'élément est visible
+    } else {
+      // Si le titre est visible, masque le logo MT avec une transition
+      logoMT.style.opacity = '0';
+      logoMT.style.height = '0';
+      logoMT.style.pointerEvents = 'none'; // Désactive les événements souris lorsque l'élément est invisible
+    }
+  }
+
+// Vérifie si le scroll de la page change et appelle la fonction pour afficher le logo MT
+window.addEventListener('scroll', function() {
+    afficherLogoMT();
+});
+
+// Vérifie dès le chargement de la page
+window.addEventListener('load', function() {
+    afficherLogoMT();
 });
 
 
 
+// Fonction pour animer l'apparition des éléments lors du scroll
+function apparitionElements() {
+    var elements = document.querySelectorAll('#maListe li');
+  
+    elements.forEach(function(element, index) {
+      var bounding = element.getBoundingClientRect();
+      var offset = window.innerHeight / 1.5; // Ajustez la position de déclenchement
+  
+      // Vérifie si l'élément est dans la fenêtre visible
+      if (bounding.top < offset) {
+        element.style.opacity = '1';
+        element.style.transform = 'translateX(0)';
+      }
+    });
+  }
+  
+  // Écouteur d'événement pour détecter le scroll
+  window.addEventListener('scroll', apparitionElements);
+  
+  // Appeler la fonction une fois au chargement initial pour gérer les éléments visibles au chargement de la page
+  apparitionElements();
 
 // Obtenez la date actuelle
 const currentDate = new Date();
@@ -187,3 +266,52 @@ setInterval(countdown, 10);
 
 // Appeler la fonction une fois pour éviter un délai initial
 countdown();
+
+
+//nav var smooth 
+// Sélectionnez votre liste de navigation
+const maNavBar = document.getElementById('sticky-nav');
+
+// Sélectionnez les éléments de votre barre de navigation
+const elementsNav = document.querySelectorAll('.sticky-nav'); // Remplacez 'votreClasse' par la classe de vos éléments de navigation
+
+// Fonction pour changer l'ordre des éléments
+function changerOrdreElements() {
+  // Changer l'ordre des éléments comme vous le souhaitez
+  maNavBar.insertBefore(elementsNav[2], elementsNav[0]); // Exemple : échange le troisième élément avec le premier
+}
+
+
+
+// description anim
+// Fonction pour vérifier si un élément est visible à l'écran
+let prevY = window.pageYOffset || document.documentElement.scrollTop;
+
+// Fonction pour animer l'apparition des éléments
+function fadeInOnScroll() {
+  const elements = document.querySelectorAll('.scroll-fade');
+  const currentY = window.pageYOffset || document.documentElement.scrollTop;
+
+  elements.forEach((element, index) => {
+    const isVisible = element.getBoundingClientRect().top < window.innerHeight * 0.65; // Ajustement pour la disparition plus tôt
+
+    if (isVisible) {
+      const scrollDiff = currentY - prevY;
+      const delay = index * 100; // Délai progressif pour chaque élément
+
+      setTimeout(() => {
+        element.classList.add('visible');
+      }, Math.max(0, scrollDiff * 50)); // Ajustement de la vitesse de disparition
+
+      prevY = currentY;
+    } else {
+      element.classList.remove('visible');
+    }
+  });
+}
+
+// Écouteur d'événement pour détecter le scroll et déclencher l'apparition des éléments
+window.addEventListener('scroll', fadeInOnScroll);
+
+// Appel initial pour vérifier les éléments déjà visibles au chargement de la page
+window.addEventListener('load', fadeInOnScroll);
