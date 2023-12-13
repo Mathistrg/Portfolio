@@ -315,3 +315,24 @@ window.addEventListener('scroll', fadeInOnScroll);
 
 // Appel initial pour vérifier les éléments déjà visibles au chargement de la page
 window.addEventListener('load', fadeInOnScroll);
+
+
+//texte caché 
+function displayText() {
+  const button = document.querySelector('.competences .glowing-btn');
+  const hiddenText = document.getElementById('hiddenText');
+  const container = document.querySelector('.competences');
+
+  button.classList.add('clicked'); // Ajouter la classe pour déclencher le zoom
+  setTimeout(function() {
+    button.style.display = 'none';
+    hiddenText.style.display = 'block';
+    container.classList.add('clicked'); // Ajouter la classe pour changer la couleur de fond
+  }, 500); // Attendre la fin de l'animation avant de masquer le bouton et afficher le texte
+  container.addEventListener('mouseleave', function() {
+    button.style.display = 'block';
+    hiddenText.style.display = 'none';
+    container.classList.remove('clicked'); // Retirer la classe lorsque la souris quitte le conteneur
+    button.classList.remove('clicked'); // Retirer la classe pour réinitialiser le bouton
+  });
+}
