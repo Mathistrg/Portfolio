@@ -336,3 +336,4 @@ function displayText() {
     button.classList.remove('clicked'); // Retirer la classe pour réinitialiser le bouton
   });
 }
+
