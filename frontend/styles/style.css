@@ -331,7 +331,7 @@ li a:hover {
 .description {
     position: relative;
     width: 100%;
-    height: 150vh;
+    height: 155vh;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
     background-color: rgba(0, 0, 0, 0.852); /* Couleur noire avec une opacité de 50% */
     background-size: cover;
@@ -444,7 +444,8 @@ hr {
     position: relative;
     width: 100%;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
-    background-color: hsl(187, 100%, 5%); /* Couleur noire avec une opacité de 50% */
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.9557072829131653) 0%, rgba(132,0,255,1) 50%, rgba(0,0,0,1) 100%);
     background-size: cover;
     background-position: center top;
     display: flex;
@@ -691,15 +692,26 @@ hr {
   }
   
   .skill {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
   
   .skill-name {
     margin-bottom: 5px;
     font-weight: bold;
     font-family: 'Poppins',sans-serif;
+    position: absolute;
+    color: white;
   }
   
+
+  .skill-name-right {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Poppins',sans-serif;
+    text-align: right;
+    color: rgb(255, 255, 255);
+  }
+
   .skill-bar {
     width: 100%;
     height: 20px;
@@ -810,7 +822,7 @@ hr {
       width: 0;
     }
     to {
-      width: 25%; /* Largeur finale pour JavaScript */
+      width: 15%; /* Largeur finale pour JavaScript */
     }
   }
   .skill-level.csharp {
@@ -852,3 +864,225 @@ hr {
       width: 78%; /* Largeur finale pour JavaScript */
     }
   }
+  
+
+  .projet {
+    padding-top: 120px;
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Cache tout contenu débordant du conteneur */
+    background-color: hsl(0, 0%, 0%); /* Couleur noire avec une opacité de 50% */
+    background-size: cover;
+    /*height: 150vh; /* Set the container height to 100% of the viewport height */
+}
+
+.title-projet h1 {
+  color: white;
+  margin-left: 425px;
+  margin-bottom: 100px;
+}
+
+
+.title-projet {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ffffff; /* Curseur de frappe */
+  animation: typewriter 3s steps(40) infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.carousel {
+  list-style: none;
+  color: white;
+}
+input[type="radio"] {
+  display: none;
+}
+.js-slider {
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+.js-slider_item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: right center;
+  transform: translate3d(0%, 0%, 0) rotateY(30deg) scaleX(0.95);
+  transition: all 1s ease,transform 1s cubic-bezier(0.43, 0.28, 0.51, 1);
+}
+#s-1:checked ~ .js-slider .js-slider_item.img-1,
+#s-2:checked ~ .js-slider .js-slider_item.img-2,
+#s-3:checked ~ .js-slider .js-slider_item.img-3 {
+  opacity: 1;
+  visibility: visible;
+  transform-origin: left center;
+  transform: translate3d(0, 0, 0) rotateY(0deg) scaleX(1);
+}
+.js-slider_img {
+  width: 92%;
+  height: 60%;
+  position: relative;
+  overflow: hidden;
+}
+.c-img-w-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 30px;
+}
+.c-img-h-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 30px;
+}
+figcaption {
+  display: block;
+}
+.wo-h3 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #009ec2; 
+  color: white;
+}
+.c-label {
+  display: inline-block;
+  background-color: #009ec2;  
+  line-height: 1;
+  padding: 0.5em 0.9em;
+  margin-right: 0.5em;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 50px;
+}
+.view-sm {
+  color: white;
+}
+
+.wo-credit {
+  color: white;
+}
+
+
+.c-txt-s {
+  color: white;
+}
+.js-slider_nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translate3d(0, -50%, 0);
+}
+.js-slider_nav_item.prev {
+  left: 0;
+}
+.js-slider_nav_item.next {
+  right: 0;
+  transform: rotateY(180deg);
+}
+.js-slider_nav_item {
+  position: absolute;
+  display: none;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid #009ec2; 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.js-slider_nav_item:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 1rem;
+  top: 55%;
+  width: 1rem;
+  height: 1px;
+  background-color: #009ec2; 
+  transform-origin: left bottom;
+  transform: translate3d(0, -50%, 0) rotate(-45deg);
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.js-slider_nav_item:hover {
+   transform: translate3d(-30%, 0, 0);
+}
+.js-slider_nav_item.next:hover {
+   transform: rotateY(180deg) translate3d(-30%, 0, 0);
+}
+.js-slider_nav_item:hover:before {
+  transform: translate3d(0, -50%, 0) rotate(-30deg);
+}
+.js-slider_nav_item:after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 2rem;
+  height: 1px;
+  background-color: #009ec2; 
+  transform: translate3d(-50%, -50%, 0);
+}
+#s-1:checked ~ .js-slider .js-slider_nav .s-nav-1,
+#s-2:checked ~ .js-slider .js-slider_nav .s-nav-2,
+#s-3:checked ~ .js-slider .js-slider_nav .s-nav-3 {
+  display: block;
+}
+.js-slider_indicator {
+  position: absolute;
+  left: 0;
+  top: 63%;
+  width: 100%;
+  text-align: center;
+}
+.js-slider-indi {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  cursor: pointer;
+}
+.js-slider-indi:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background: #009ec2;  
+  transform: translate3d(-50%, -50%, 0);
+}
+.js-slider-indi:hover:after {
+  transform: translate3d(-50%, -50%, 0) scale(1.5);
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#s-1:checked ~ .js-slider .js-slider_indicator .indi-1:after,
+#s-2:checked ~ .js-slider .js-slider_indicator .indi-2:after,
+#s-3:checked ~ .js-slider .js-slider_indicator .indi-3:after {
+  transform: translate3d(-50%, -50%, 0) scale(2.5);
+}

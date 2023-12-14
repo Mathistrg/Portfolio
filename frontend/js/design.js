@@ -337,3 +337,15 @@ function displayText() {
   });
 }
 
+//projet title
+const textElement = document.querySelector('.title-projet');
+const texts = ['Texte 1', 'Texte 2', 'Texte 3']; // Liste de textes à afficher
+
+let index = 0;
+
+function changeText() {
+  textElement.setAttribute('data-text', texts[index]);
+  index = (index + 1) % texts.length;
+}
+
+setInterval(changeText, 2500); // Change le texte toutes les 3 secondes
