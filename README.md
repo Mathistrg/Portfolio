@@ -1,8 +1,8 @@
 # This is my portfolio
 
-[Lien vers mon site](https://mathistrg.github.io/Portfolio/frontend/)
-
 # How to access to it ?
-Go to the frontend file, then go on the index.html (this is the main page) and lunch it.
+Just click on the link below
 
+[Lien vers mon site](https://mathis-truong-mon-portfolio.netlify.app/)
+<br>This website is still in working progress
 # Thanks for viewing my Portfolio
