@@ -349,3 +349,11 @@ function changeText() {
 }
 
 setInterval(changeText, 2500); // Change le texte toutes les 3 secondes
+
+
+
+
+// 
+
+
+
