@@ -51,7 +51,7 @@ window.addEventListener('scroll', function() {
     // Calculer la nouvelle taille de police en fonction du défilement
     var scrolled = window.scrollY;
     var newX = 0 - scrolled / 40;
-    var newSize = 100 - scrolled / 10; // Vous pouvez ajuster le facteur de déplacement ici
+    var newSize = 80 - scrolled / 10; // Vous pouvez ajuster le facteur de déplacement ici
 
     // Limiter la taille minimale du texte pour éviter qu'il ne devienne trop petit
     newSize = Math.max(newSize, 20); // Taille minimale de 20px (ajustez selon vos besoins)
@@ -353,7 +353,58 @@ setInterval(changeText, 2500); // Change le texte toutes les 3 secondes
 
 
 
-// 
+// liste animations
+var images = document.querySelectorAll('.scroll-up-image');
+var delay = 200; // Délai en millisecondes avant le déclenchement de l'animation
 
+function checkVisibility() {
+  images.forEach(function(image) {
+    var imagePosition = image.getBoundingClientRect().top;
+    var windowHeight = window.innerHeight;
 
+    if (imagePosition < windowHeight && imagePosition > 0) {
+      setTimeout(function() {
+        image.classList.add('visible');
+      }, delay);
+    } else {
+      image.classList.remove('visible');
+    }
+  });
+}
 
+window.addEventListener('scroll', checkVisibility);
+window.addEventListener('resize', checkVisibility);
+
+// Vérification au chargement de la page
+window.addEventListener('load', checkVisibility);
+
+//advertise
+var scrollingText = document.querySelector('.scrolling-text');
+
+scrollingText.addEventListener('mouseenter', function() {
+  scrollingText.style.animationPlayState = 'paused';
+});
+
+scrollingText.addEventListener('mouseleave', function() {
+  scrollingText.style.animationPlayState = 'running';
+}); 
+
+// TypeScript
+var typing = new Typed(".text", {
+  strings: ["", "creators.", "editors."],
+  typeSpeed: 100,
+  backSpeed: 40,
+  loop: true
+});
+
+// GSAP
+gsap.registerPlugin(ScrollTrigger);
+const introsplitTypes = document.querySelectorAll(".left-part h1");
+introsplitTypes.forEach((char, i) => {
+  const i_text = new SplitType(char);
+  gsap.to(i_text.chars, {
+    y: 0,
+    stagger: 0.08, // text splitting transition
+    duration: 0.3 // full text duration
+  });
+});
