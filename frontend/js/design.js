@@ -21,7 +21,31 @@ document.addEventListener('mousemove', function(e) {
 document.addEventListener('mouseout', function() {
     cursorHalo.style.opacity = '0'; // Rend le halo invisible quand le curseur sort de la fenêtre
 });
+// Obtenir l'heure actuelle
+var heureActuelle = new Date().getHours();
 
+// Définir les plages horaires pour saluer
+var heureMatin = 6; // 6h du matin
+var heureApresMidi = 12; // 12h (midi)
+var heureSoir = 18; // 18h (6pm)
+
+// Sélectionner l'élément où afficher la salutation
+var salutationElement = document.getElementById("salutation");
+
+// Déclarer une variable pour stocker la salutation
+var salutation = "";
+
+// Vérifier l'heure actuelle et définir la salutation en conséquence
+if (heureActuelle >= heureMatin && heureActuelle < heureApresMidi) {
+    salutation = "Bonjour!";
+} else if (heureActuelle >= heureApresMidi && heureActuelle < heureSoir) {
+    salutation = "Bonjour";
+} else {
+    salutation = "Bonsoir";
+}
+
+// Afficher la salutation dans l'élément HTML en utilisant une template string
+salutationElement.textContent = `${salutation}`;
 
 //Scroll smooth
 document.addEventListener("DOMContentLoaded", function() {
