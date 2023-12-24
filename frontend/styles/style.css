@@ -168,7 +168,7 @@ li:first-child {
     text-align: center;
     padding: 14px 50px;
     text-decoration: none;
-    font-family: "monument_extendedregular"
+    font-family: "Poppins", sans-serif;
 }
 
 li a:hover {
@@ -359,7 +359,7 @@ li a:hover {
 .description {
     position: relative;
     width: 100%;
-    height: 155vh;
+    height: 130vh;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
     background-color: rgba(0, 0, 0, 0.852); /* Couleur noire avec une opacité de 50% */
     background-size: cover;
@@ -410,7 +410,7 @@ hr {
     white-space: nowrap;
     margin: 150px;
     transform: translateX(0);
-    font-family: "monument_extendedregular";
+    font-family: "Poppins", sans-serif;
     font-size: 24px;
 
 }
@@ -421,7 +421,7 @@ hr {
     width: 100%;
 }
 .moi h1:first-child {
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 
@@ -1121,6 +1121,7 @@ figcaption {
   background-color: black;
   overflow: hidden;
   position: relative;
+  height: 170vh;
 }
 
 .scroll-up-image {
@@ -1157,7 +1158,7 @@ figcaption {
   white-space: nowrap;
   position: absolute;
   animation: scroll-left 15s linear infinite; /* Animation de défilement */
-  font-family: "monument_extendedregular";
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: bold !important;
   margin-top: 10px;
@@ -1165,7 +1166,7 @@ figcaption {
 
 @keyframes scroll-left {
   from {
-    transform: translateX(70%); /* Commence hors de la vue à droite */
+    transform: translateX(60%); /* Commence hors de la vue à droite */
   }
   to {
     transform: translateX(-100%); /* Termine hors de la vue à gauche */
