@@ -240,7 +240,7 @@ function countdown() {
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     document.getElementById('countdown').innerHTML = `
-    🎂${days} jours 🎂
+    🎂${days} jours restant pour mes ${age + 1} ans🎂
     `;
 
     if (difference < 0) {
