@@ -2665,7 +2665,7 @@ figcaption {
 
 /* Circle Line */
 .bg-circle-h-line {
-  bottom: 42px;
+  bottom: 100px;
   left: -68px;
   z-index: 1;
   width: 181px;
