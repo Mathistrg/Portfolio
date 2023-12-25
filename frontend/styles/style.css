@@ -729,7 +729,7 @@ hr {
   .skill-name {
     margin-bottom: 5px;
     font-weight: bold;
-    font-family: "monument_extendedregular";
+    font-family: "Poppins", sans-serif;
     position: absolute;
     color: white;
   }

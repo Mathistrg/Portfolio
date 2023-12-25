@@ -67,6 +67,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+// Obtenir le mois actuel
+var moisActuel = new Date().getMonth() + 1; // +1 car les mois vont de 0 à 11 en JavaScript
+
+// Sélectionner l'élément img
+var imageElement = document.getElementById("saisonImage");
+
+// Changer l'image en fonction du mois
+if (moisActuel >= 3 && moisActuel <= 5) { // Printemps (mars à mai)
+    imageElement.src = "/img/printemps.gif";
+    imageElement.alt = "Printemps";
+} else if (moisActuel >= 6 && moisActuel <= 8) { // Été (juin à août)
+    imageElement.src = "/img/été.gif";
+    imageElement.alt = "Été";
+} else if (moisActuel >= 9 && moisActuel <= 11) { // Automne (septembre à novembre)
+    imageElement.src = "/img/automne.gif";
+    imageElement.alt = "Automne";
+} else { // Hiver (décembre à février)
+    imageElement.src = "/img/tree.gif";
+    imageElement.alt = "Hiver";
+}
+
 // Récupérer l'élément #monTitre
 var monTitre = document.getElementById('monTitre');
 
