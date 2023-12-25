@@ -169,6 +169,7 @@ li:first-child {
     padding: 14px 50px;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
+    user-select: none;
 }
 
 li a:hover {
@@ -377,7 +378,7 @@ li a:hover {
     margin-top: 10px;
     width: 150px;
     margin-right: 150px;
-    user-select: none;
+    pointer-events: none; 
 }
 
 
@@ -412,6 +413,7 @@ hr {
     transform: translateX(0);
     font-family: "Poppins", sans-serif;
     font-size: 24px;
+    user-select: none;
 
 }
 
@@ -981,6 +983,7 @@ input[type="radio"] {
   width: 100%;
   height: auto;
   transform: translate3d(-50%, -50%, 0);
+  pointer-events: none;
 }
 .c-img-h-full {
   position: absolute;
@@ -989,6 +992,7 @@ input[type="radio"] {
   width: auto;
   height: 100%;
   transform: translate3d(-50%, -50%, 0);
+  pointer-events: none;
 }
 figcaption {
   display: block;
@@ -1131,6 +1135,7 @@ figcaption {
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Ajout de la transition pour le mouvement */
   transform: translateY(200px); /* Position initiale légèrement en dessous pour l'effet de slide up */
+  pointer-events: none;
 }
 
 .visible {
@@ -1424,6 +1429,7 @@ figcaption {
   border-radius: 120px;
   position: absolute;
   animation: 30s infinite;
+  pointer-events: none;
 }
 
 /* Box nth-child */
@@ -2671,6 +2677,7 @@ figcaption {
   width: 181px;
   height: 111px;
   position: relative;
+  pointer-events: none;
 }
 
 .bg-circle-h-line img {
@@ -2801,6 +2808,7 @@ figcaption {
 
   .bg-dash-circle {
     width: 130px;
+    pointer-events: none;
   }
 
   .bg-circle-h-line {
