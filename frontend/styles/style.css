@@ -128,6 +128,7 @@ body {
     font-family: "monument_extendedregular";
 }
 #logoMT{
+  font-family: 'monument_extendedregular';
     text-decoration: none;
     color: white;
     font-size: 30px;
@@ -169,7 +170,9 @@ li:first-child {
     padding: 14px 50px;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
     user-select: none;
+    border-radius: 50px;
 }
 
 li a:hover {
@@ -323,7 +326,7 @@ li a:hover {
     color: white;
     mix-blend-mode: lighten;
     margin-left: 150px;
-    margin-top: 400px;
+    margin-top: 500px;
     position: relative;
     display: flex;
     user-select: none;
@@ -332,8 +335,8 @@ li a:hover {
 .webdev h1 {
     position: absolute;
     right: 100px;
-    bottom: 5px;
-    font-size: 40px;
+    bottom: 0px;
+    font-size: 50px;
     background: linear-gradient(90deg, rgba(0,237,255,1) 0%, rgba(52,66,171,1) 35%, rgba(96,23,221,1) 65%, rgba(192,0,255,1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -360,7 +363,7 @@ li a:hover {
 .description {
     position: relative;
     width: 100%;
-    height: 130vh;
+    height: 100vh;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
     background-color: rgba(0, 0, 0, 0.852); /* Couleur noire avec une opacité de 50% */
     background-size: cover;
@@ -912,7 +915,7 @@ hr {
 .title-projet h1 {
   color: white;
   margin-bottom: 100px;
-  margin-left: 400px;
+  margin-left: 580px;
 }
 
 
@@ -955,7 +958,7 @@ input[type="radio"] {
   top: 0;
   width: 100%;
   height: 100%;
-  padding: 1rem 3rem;
+  padding: 1rem 9rem;
   opacity: 0;
   visibility: hidden;
   transform-origin: right center;
@@ -1126,12 +1129,11 @@ figcaption {
   overflow: hidden;
   position: relative;
   height: 170vh;
+  text-align: center;
 }
 
 .scroll-up-image {
   width: 15%;
-  margin-left: 650px;
-  margin-right: 650px;
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Ajout de la transition pour le mouvement */
   transform: translateY(200px); /* Position initiale légèrement en dessous pour l'effet de slide up */
@@ -1146,6 +1148,8 @@ figcaption {
 .liste h1 {
   text-align: center;
   font-family: "monument_extendedregular";
+  margin-left: 820px;
+
 }
 
 .advertisement {

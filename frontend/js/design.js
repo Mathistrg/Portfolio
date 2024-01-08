@@ -97,7 +97,7 @@ window.addEventListener('scroll', function() {
     // Calculer la nouvelle taille de police en fonction du défilement
     var scrolled = window.scrollY;
     var newX = 0 - scrolled / 40;
-    var newSize = 80 - scrolled / 10; // Vous pouvez ajuster le facteur de déplacement ici
+    var newSize = 100 - scrolled / 10; // Vous pouvez ajuster le facteur de déplacement ici
 
     // Limiter la taille minimale du texte pour éviter qu'il ne devienne trop petit
     newSize = Math.max(newSize, 20); // Taille minimale de 20px (ajustez selon vos besoins)
@@ -229,25 +229,45 @@ function apparitionElements() {
 const currentDate = new Date();
 
 // Mois de référence pour le changement d'année (septembre est le 9e mois)
-const referenceMonth = 8; // (les mois commencent à partir de 0, donc septembre est le mois 8)
 
 // Date d'anniversaire (remplacez par votre date d'anniversaire)
 let birthday = new Date('2004-06-24'); // Modifiez cette date pour correspondre à votre date de naissance
 
-// Vérification pour déterminer si l'anniversaire est déjà passé cette année
+// Mois de référence pour le changement d'année (septembre est le 9e mois)
+const referenceMonth = 8; // (les mois commencent à partir de 0, donc septembre est le mois 8)
+
+let yearNumber; // Déclaration de la variable sans initialisation pour le moment
 
 function determineYear() {
-    // Vérifiez si nous sommes avant ou après le mois de référence (septembre)
-    if (currentDate.getMonth() < referenceMonth) {
-        // Avant septembre, c'est toujours la première année scolaire
-        document.getElementById('yearNumber').textContent = '1ère';
+    const currentDate = new Date();
+
+    // Si le mois actuel est avant septembre ou si c'est septembre mais avant ou le jour est avant la date de référence
+    if (currentDate.getMonth() < referenceMonth || (currentDate.getMonth() === referenceMonth && currentDate.getDate() < 24)) {
+        yearNumber = currentDate.getFullYear() - 2022; // Commence à +1 en septembre 2022
     } else {
-        // Après septembre, nous entrons dans la deuxième année scolaire
-        const referenceYear = 2023; // Remplacez 2023 par votre année de référence
-        const yearNumber = currentDate.getFullYear() - referenceYear + 2;
-        document.getElementById('yearNumber').textContent = `${yearNumber}e`;
+        // Si le mois est septembre ou après et après la date de référence, incrémenter l'année actuelle
+        yearNumber = currentDate.getFullYear() - 2022 + 1;
     }
+
+    // Mettre à jour l'élément avec l'ID "yearNumber"
+    document.getElementById('yearNumber').textContent = `${yearNumber}e`;
 }
+
+// Appel initial pour déterminer l'année au chargement de la page
+determineYear();
+
+// Vérification tous les jours pour mettre à jour l'année si septembre est atteint
+setInterval(function() {
+    determineYear();
+}, 24 * 60 * 60 * 1000); // Vérification quotidienne
+
+// Appel initial pour déterminer l'année au chargement de la page
+determineYear();
+
+// Vérification tous les jours pour mettre à jour l'année si septembre est atteint
+setInterval(function() {
+  determineYear();
+}, 24 * 60 * 60 * 1000); // Vérification quotidienne
 
 function calculateAge(birth, current) {
     const birthDate = new Date(birth);
@@ -286,7 +306,7 @@ function countdown() {
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     document.getElementById('countdown').innerHTML = `
-    🎂${days} jours restant pour mes ${age + 1} ans🎂
+    🎂${days} jours avant mes ${age + 1} ans🎂
     `;
 
     if (difference < 0) {
