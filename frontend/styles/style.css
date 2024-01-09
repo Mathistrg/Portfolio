@@ -216,11 +216,11 @@ li a:hover {
     right: 0; /* Positionne l'image sur la droite */
     padding: 70px;
     /* Ajuste la taille, l'opacité, etc. */
-    width: 20%; /* Exemple d'ajustement de la largeur */
+    width: 15%; /* Exemple d'ajustement de la largeur */
     transition: 0.2s ease-in-out;
 }
 .superposed-image:hover{
-    width: 22%;
+    width: 17%;
 }
 
 
@@ -364,7 +364,7 @@ li a:hover {
 .description {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 105vh;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
     background-color: rgba(0, 0, 0, 0.852); /* Couleur noire avec une opacité de 50% */
     background-size: cover;
@@ -1131,7 +1131,7 @@ figcaption {
   background-color: black;
   overflow: hidden;
   position: relative;
-  height: 180vh;
+  height: 130vh;
   text-align: center;
 }
 
@@ -1278,7 +1278,7 @@ figcaption {
   color: #f1f1f1;
   letter-spacing: 0.25px;
   text-transform: uppercase;
-  font-family: "Extenda Trial 20 Micro";
+  font-family: "monument_extendedregular";
   font-weight: 300;
   font-style: normal;
   display: inline-flex;
@@ -2895,7 +2895,7 @@ figcaption {
 
 .cmoi {
   display: inline-block;
-  position: fixed;
+  margin-top: 300px;
 }
 
 .login-box {
