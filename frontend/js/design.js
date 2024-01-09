@@ -37,7 +37,7 @@ var salutation = "";
 
 // Vérifier l'heure actuelle et définir la salutation en conséquence
 if (heureActuelle >= heureMatin && heureActuelle < heureApresMidi) {
-    salutation = "Bonjour!";
+    salutation = "Bonjour";
 } else if (heureActuelle >= heureApresMidi && heureActuelle < heureSoir) {
     salutation = "Bonjour";
 } else {
@@ -474,3 +474,6 @@ introsplitTypes.forEach((char, i) => {
     duration: 0.3 // full text duration
   });
 });
+
+
+
