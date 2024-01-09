@@ -275,18 +275,36 @@
         </body>
       </div>
 
-
-      <div class="form">
-        <h1>Contact me</h1>
-        <form action="https://formsubmit.co/mathis.truong95@gmail.com" method="POST">
-          <input type="text" name="name" required placeholder="Nom">
-          <input type="email" name="email" required placeholder="Email">
-          <input type="text" name="subject" required placeholder="Sujet">
-          <textarea name="message" required placeholder="Message"></textarea>
-          <button type="submit">Envoyer</button>
-        </form>
+      <div class="cmoi" id="section5"></div>
+        <div class="login-box">
+          <h2>Me Contacter</h2>
+          <form action="https://formsubmit.co/mathis.truong95@gmail.com" method="POST"> 
+            <div class="user-box">
+              <input type="text" name="name" required placeholder="Nom">
+              <label>Username</label>
+            </div>
+            <div class="user-box">
+              <input type="email" name="email" required placeholder="Email">
+              <label>Adresse mail</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="subject" required placeholder="Sujet">
+              <label>Titre</label>
+            </div>
+            <div class="user-box">
+              <textarea name="message" required placeholder="Message"></textarea>
+            </div>
+            <input type="hidden" name="_template" value="box">
+            <button class="envoyer" type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-
 
 
 
