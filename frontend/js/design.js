@@ -487,9 +487,9 @@ function validerFormulaire(event) {
 function changerTexte() {
   var bouton = document.querySelector('.envoyer');
   if (bouton.textContent === 'Envoyer') {
-    bouton.textContent = 'Veuillez patienter 10 à 15 sec SVP';
+    bouton.textContent = 'Veuillez patienter svp';
   } else {
-    bouton.textContent = 'Veuillez patienter 10 à 15 sec SVP';
+    bouton.textContent = 'Veuillez patienter svp';
   }
 }
 
