@@ -475,5 +475,21 @@ introsplitTypes.forEach((char, i) => {
   });
 });
 
+function validerFormulaire(event) {
+  var formulaire = document.getElementById('myForm');
+  if (formulaire.checkValidity()) {
+    changerTexte();
+  } else {
+    event.preventDefault(); // Empêche l'envoi du formulaire si les champs ne sont pas valides
+  }
+}
 
+function changerTexte() {
+  var bouton = document.querySelector('.envoyer');
+  if (bouton.textContent === 'Envoyer') {
+    bouton.textContent = 'Veuillez patienter 10 à 15 sec SVP';
+  } else {
+    bouton.textContent = 'Veuillez patienter 10 à 15 sec SVP';
+  }
+}
 

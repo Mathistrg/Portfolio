@@ -278,7 +278,7 @@
       <div class="cmoi" id="section5"></div>
         <div class="login-box">
           <h2>Me Contacter</h2>
-          <form action="https://formsubmit.co/mathis.truong95@gmail.com" method="POST"> 
+          <form id="myForm" action="https://formsubmit.co/mathis.truong95@gmail.com" method="POST"> 
             <div class="user-box">
               <input type="text" name="name" required placeholder="Nom">
               <label>Username</label>
@@ -295,12 +295,12 @@
               <textarea name="message" required placeholder="Message"></textarea>
             </div>
             <input type="hidden" name="_template" value="box">
-            <button class="envoyer" type="submit">
+            <button class="envoyer" type="submit" onclick="validerFormulaire(event)" onclick="changerTexte()">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
-              Submit
+              Envoyer
             </button>
           </form>
         </div>
