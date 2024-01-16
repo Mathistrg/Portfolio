@@ -3687,7 +3687,7 @@ figcaption {
   background-color: black;
   overflow: hidden;
   position: relative;
-  height: 135vh;
+  height: 140vh;
   text-align: center;
 }
 
@@ -3751,7 +3751,7 @@ figcaption {
 
 /* Demo css -start */
 .info-section {
-  height: 100svh;
+  height: 1500vh;
   min-height: 780px;
   padding: 0 0 0 30px;
   display: flex;
