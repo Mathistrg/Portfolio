@@ -68,27 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Obtenir le mois actuel
-var moisActuel = new Date().getMonth() + 1; // +1 car les mois vont de 0 à 11 en JavaScript
-
-// Sélectionner l'élément img
-var imageElement = document.getElementById("saisonImage");
-
-// Changer l'image en fonction du mois
-if (moisActuel >= 3 && moisActuel <= 5) { // Printemps (mars à mai)
-    imageElement.src = "/img/printemps.gif";
-    imageElement.alt = "Printemps";
-} else if (moisActuel >= 6 && moisActuel <= 8) { // Été (juin à août)
-    imageElement.src = "/img/été.gif";
-    imageElement.alt = "Été";
-} else if (moisActuel >= 9 && moisActuel <= 11) { // Automne (septembre à novembre)
-    imageElement.src = "/img/automne.gif";
-    imageElement.alt = "Automne";
-} else { // Hiver (décembre à février)
-    imageElement.src = "/img/tree.gif";
-    imageElement.alt = "Hiver";
-}
-
 // Récupérer l'élément #monTitre
 var monTitre = document.getElementById('monTitre');
 
@@ -101,6 +80,11 @@ window.addEventListener('scroll', function() {
 
     // Limiter la taille minimale du texte pour éviter qu'il ne devienne trop petit
     newSize = Math.max(newSize, 20); // Taille minimale de 20px (ajustez selon vos besoins)
+
+    if (window.innerWidth < 768) {
+      // Si la largeur de l'écran est inférieure à 600 pixels, appliquer un comportement spécifique
+      newSize = 34 - scrolled / 10; // Ajustez la taille de police pour les écrans plus petits
+  }
 
     // Appliquer la nouvelle taille de police au titre
     monTitre.style.left = newX + 'vw'; // Déplacement horizontal en pourcentage de la largeur de la vue
@@ -137,6 +121,7 @@ let lastScrollTop = 0; // Dernière position de défilement
 
 const maxRightLimit = 250; // Limite droite maximale pour le déplacement du texte
 
+
 window.addEventListener('scroll', function() {
   let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -147,7 +132,6 @@ window.addEventListener('scroll', function() {
 
   // Nouvelle position horizontale progressive
   let newPosition = initialLeft + (currentScroll * scrollFactor);
-
   // Vérifie si la nouvelle position dépasse la limite droite
   if (newPosition <= maxRightLimit) {
     element.style.left = newPosition + 'px';
