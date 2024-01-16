@@ -130,7 +130,7 @@ window.addEventListener('scroll', function() {
   // Facteur de déplacement basé sur la quantité de défilement
   let scrollFactor = 0.20 + (currentScroll * 0.0005);
   if (window.innerWidth < 768){
-    scrollFactor = 0.01 + (currentScroll * 0.0002);
+    scrollFactor = 0.01 + (currentScroll * 0.00025);
   }
 
   // Nouvelle position horizontale progressive
