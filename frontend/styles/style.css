@@ -1162,6 +1162,7 @@ figcaption {
 /* button */
 .book-link {
   margin: 40px 0 0;
+  padding-right: 20px !important;
   padding: 0;
   border: 0;
   font-size: 56px;
