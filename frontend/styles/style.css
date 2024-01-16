@@ -3476,12 +3476,12 @@ hr {
 .title-projet h1 {
   color: white;
   margin-bottom: 100px;
-  margin-left: 580px;
+  margin-left: 10px;
 }
 
 
 .title-projet {
-  font-size: 1.5em;
+  font-size: 11px;
   font-weight: bold;
   color: #333;
   overflow: hidden;
@@ -3536,7 +3536,7 @@ input[type="radio"] {
 }
 .js-slider_img {
   width: 350px;
-  height: 60%;
+  height: 40%;
   position: relative;
   overflow: hidden;
   right: 210px;
@@ -5460,7 +5460,7 @@ figcaption {
   position: relative;
   top: 50%;
   left: 50%;
-  width: 600px;
+  width: 300px;
   padding: 60px 50px;
   transform: translate(-50%, -50%);
   background: rgba(101, 101, 101, 0.8);
@@ -5474,7 +5474,7 @@ figcaption {
   padding: 0;
   color: #fff;
   text-align: center;
-  font-size: 50px;
+  font-size: 20px;
   font-family: 'monument_extendedregular';
 }
 
@@ -5486,7 +5486,7 @@ figcaption {
 .login-box .user-box input {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
   margin-bottom: 30px;
   border: none;
@@ -5499,7 +5499,7 @@ figcaption {
   top:0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
   pointer-events: none;
   transition: .5s;
@@ -5518,7 +5518,7 @@ figcaption {
   display: inline-block;
   padding: 10px 20px;
   color: #03e9f4;
-  font-size: 16px;
+  font-size: 12px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
@@ -5618,12 +5618,12 @@ figcaption {
 }
 
 textarea {
-  width: 500px; /* Largeur */
+  width: 200px; /* Largeur */
   height: 120px; /* Hauteur */
   resize: none; /* Empêcher le redimensionnement manuel */
   background-color: #1c1c1c;
   color: white;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .envoyer {
