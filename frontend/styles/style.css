@@ -3752,7 +3752,7 @@ figcaption {
 
 /* Demo css -start */
 .info-section {
-  height: 1500vh;
+  height: 35%;
   min-height: 780px;
   padding: 0 0 0 30px;
   display: flex;
