@@ -3689,6 +3689,7 @@ figcaption {
   position: relative;
   height: 140vh;
   text-align: center;
+  padding-top: 20px;
 }
 
 .scroll-up-image {
