@@ -399,7 +399,7 @@ li a:hover {
 .name {
     color: white;
     mix-blend-mode: lighten;
-    margin-left: 150px;
+    margin-left: 200px;
     margin-top: 290px;
 }
 .name p {
@@ -485,7 +485,7 @@ li a:hover {
     transition: left 0.5s ease; /* Transition du mouvement du texte (plus lente) */
     color: white;
     font-family: "monument_extendedregular";
-    font-size: 15px;
+    font-size: 35px;
     user-select: none;
   }
 
@@ -2975,7 +2975,6 @@ textarea {
     transition: font-size 0.3s ease; /* Transition pour l'effet d'écrasement */
     /* Autres styles du titre */
     margin-top: 15px;
-    transform: scaleY(1.2);
     pointer-events: none; 
     font-family: "monument_extendedregular";
   }
@@ -3074,7 +3073,7 @@ textarea {
 }
 .name h1 {
     margin-top: 0px;
-    font-size: 30px;
+    font-size: 60px;
 }
 
 #scroll-up-animation {
@@ -3171,11 +3170,12 @@ hr {
     color: white;
     text-align: center;
     white-space: nowrap;
-    margin: 150px;
+    margin: 50px;
     transform: translateX(0);
     font-family: "Poppins", sans-serif;
-    font-size: 24px;
+    font-size: 14px;
     user-select: none;
+    padding-bottom: 50px;
 
 }
 

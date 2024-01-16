@@ -83,7 +83,7 @@ window.addEventListener('scroll', function() {
 
     if (window.innerWidth < 768) {
       // Si la largeur de l'écran est inférieure à 600 pixels, appliquer un comportement spécifique
-      newSize = 30 - scrolled / 10; // Ajustez la taille de police pour les écrans plus petits
+      newSize = 60 - scrolled / 10; // Ajustez la taille de police pour les écrans plus petits
   }
 
     // Appliquer la nouvelle taille de police au titre
@@ -129,6 +129,9 @@ window.addEventListener('scroll', function() {
 
   // Facteur de déplacement basé sur la quantité de défilement
   let scrollFactor = 0.20 + (currentScroll * 0.0005);
+  if (window.innerWidth < 768){
+    scrollFactor = 0.01 + (currentScroll * 0.0002);
+  }
 
   // Nouvelle position horizontale progressive
   let newPosition = initialLeft + (currentScroll * scrollFactor);
