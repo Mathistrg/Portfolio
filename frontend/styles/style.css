@@ -3465,7 +3465,7 @@ hr {
 
 
   .projet {
-    padding-top: 120px;
+    padding-top: 10px;
     position: relative;
     width: 100%;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
