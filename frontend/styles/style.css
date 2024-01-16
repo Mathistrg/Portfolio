@@ -218,7 +218,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #0000006d;
+    background-color: #000000b1;
     z-index: 1000; /* Assure que la barre reste au-dessus du contenu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.364); /* Ombre sous la barre de navigation */
     border-radius: 50px;
