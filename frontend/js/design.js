@@ -493,3 +493,14 @@ function changerTexte() {
   }
 }
 
+function toggleButton() {
+  const button = document.querySelector('.menu-phone');
+  button.classList.toggle('opened');
+  button.setAttribute('aria-expanded', button.classList.contains('opened'));
+  
+}
+
+// Ajoutez un gestionnaire d'événements pour le clic sur le bouton
+document.querySelector('.menu-phone').addEventListener('click', function () {
+  toggleButton();
+});
