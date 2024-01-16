@@ -3021,15 +3021,15 @@ textarea {
 }
 
 #myVideo {
-    min-width: auto;
-    min-height: auto;
+    min-width: 100%;
+    min-height: 100%;
     width: auto;
     height: auto;
-    object-fit: fill;
+    object-fit: cover;
     right: 0;
     bottom: 0;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -3074,7 +3074,7 @@ textarea {
 }
 .name h1 {
     margin-top: 0px;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 #scroll-up-animation {

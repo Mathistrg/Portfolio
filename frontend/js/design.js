@@ -83,7 +83,7 @@ window.addEventListener('scroll', function() {
 
     if (window.innerWidth < 768) {
       // Si la largeur de l'écran est inférieure à 600 pixels, appliquer un comportement spécifique
-      newSize = 34 - scrolled / 10; // Ajustez la taille de police pour les écrans plus petits
+      newSize = 30 - scrolled / 10; // Ajustez la taille de police pour les écrans plus petits
   }
 
     // Appliquer la nouvelle taille de police au titre
