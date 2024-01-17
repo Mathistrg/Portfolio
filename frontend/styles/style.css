@@ -3062,7 +3062,7 @@ textarea {
 }
 .name p {
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 20px;
 }
 .name h1 {
     margin-top: 0px;
@@ -3099,7 +3099,7 @@ textarea {
     position: absolute;
     right: 10px;
     bottom: 120px;
-    font-size: 30px;
+    font-size: 33px;
     background: linear-gradient(90deg, rgba(0,237,255,1) 0%, rgba(52,66,171,1) 35%, rgba(96,23,221,1) 65%, rgba(192,0,255,1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -3144,7 +3144,7 @@ textarea {
     transition: left 0.5s ease; /* Transition du mouvement du texte (plus lente) */
     color: white;
     font-family: "monument_extendedregular";
-    font-size: 20px;
+    font-size: 26px;
     user-select: none;
   }
 
@@ -3163,10 +3163,10 @@ hr {
     color: white;
     text-align: center;
     white-space: nowrap;
-    margin: 50px;
+    margin: 10px;
     transform: translateX(0);
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     user-select: none;
     padding-bottom: 50px;
 
