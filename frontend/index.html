@@ -58,13 +58,13 @@
         </div>
         
         <div class="moi">
-            <h1 class="scroll-fade slide-right"><hr style="height: 10px; width: 150px;"> Étudiant en <span id="yearNumber"></span> année à Webtech Institute <hr style="height: 10px; width: 150px;"></h1>
+            <h1 class="scroll-fade slide-right"> Étudiant en <span id="yearNumber"></span> année à Webtech Institute <hr></h1>
             <h1 class="scroll-fade slide-left">
-                <hr style="height: 10px; width: 150px;"><div id="age"></div>
-                <div id="countdown"></div><hr style="height: 10px; width: 150px;">
+                <div id="age"></div>
+                <div id="countdown"></div><hr>
             </h1>
-            <h1 class="scroll-fade slide-right"><hr style="height: 10px; width: 150px;"> Je suis en Développement Web <hr style="height: 10px; width: 150px;"></h1>
-            <h1 class="scroll-fade slide-left"><hr style="height: 10px; width: 150px;"> J'ai eu mon Baccalauréat S* <hr style="height: 10px; width: 150px;"></h1>
+            <h1 class="scroll-fade slide-right"> Je suis en Développement Web <hr></h1>
+            <h1 class="scroll-fade slide-left"> J'ai eu mon Baccalauréat S* <hr></h1>
         </div>
     </div>
 
@@ -192,19 +192,23 @@
           <h2>Me contacter</h2>
           <form id="myForm" action="https://formsubmit.co/mathis.truong95@gmail.com" method="POST"> 
             <div class="user-box">
-              <input type="text" name="name" required placeholder="Nom">
-              <label>NOM/Prénom</label>
+              <input type="text" name="name" required placeholder="">
+              <label>NOM / Prénom</label>
             </div>
             <div class="user-box">
-              <input type="email" name="email" required placeholder="Email">
+              <input type="text" name="company" required placeholder="">
+              <label>Votre statut (entreprise, étudiant, asso...)</label>
+            </div>
+            <div class="user-box">
+              <input type="email" name="email" required placeholder="">
               <label>Adresse mail</label>
             </div>
             <div class="user-box">
-              <input type="text" name="subject" required placeholder="Sujet">
+              <input type="text" name="subject" required placeholder="">
               <label>Titre</label>
             </div>
             <div class="user-box">
-              <textarea name="message" required placeholder="Message"></textarea>
+              <textarea name="message" required placeholder="Votre message"></textarea>
             </div>
             <input type="hidden" name="_template" value="box">
             <button class="envoyer" type="submit" onclick="validerFormulaire(event)" onclick="changerTexte()">

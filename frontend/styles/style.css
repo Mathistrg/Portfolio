@@ -492,10 +492,10 @@ li a:hover {
 hr {
     height: 2px; /* Hauteur de la ligne */
     width: calc(100% - 40px); /* Largeur initiale réduite */
-    border: none; /* Retire la bordure */
-    background: linear-gradient(90deg, rgba(0,237,255,1) 0%, rgba(52,66,171,1) 35%, rgba(96,23,221,1) 65%, rgba(192,0,255,1) 100%);
+    color: white;
     transition-duration: 0.5s; /* Durée de la transition de la ligne (plus courte = plus rapide) */
     user-select: none;
+    width: 150px;
 }
 
 .moi h1 {
@@ -2815,7 +2815,7 @@ figcaption {
 
 .login-box .user-box {
   position: relative;
-  font-family: 'monument_extendedregular';
+  font-family: 'Poppins',sans-serif;
 }
 
 .login-box .user-box input {
@@ -3457,7 +3457,7 @@ hr {
 
 
   .projet {
-    padding-top: 10px;
+    padding-top: 100px;
     position: relative;
     width: 100%;
     overflow: hidden; /* Cache tout contenu débordant du conteneur */
